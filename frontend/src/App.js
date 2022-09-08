@@ -1,12 +1,25 @@
 import React from 'react';
 
+//Start of the Creating search//
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+            employees: []
+    }
+    this.searchFoods = this.searchFoods.bind(this);
+}
+searchFoods(){
+  console.log("askdmmsdksdm");
+}
+//End of the creating search//
 
   render(){
    
   return (
     <div className="App">
-    
+   
 <div id="mobile-menu">
   <ul>
     <li><a href="#" class="home1">Home</a>
@@ -284,7 +297,7 @@ class App extends React.Component {
                       <option>   Mobiles </option>
                       <option>   Music &amp; Audio </option>
                     </select>
-                    <input type="text" class="form-control" placeholder="Search" name="search" />
+                    <input type="text" class="form-control" placeholder="Search" name="search" onChange={this.searchFoods} />
                     <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
                   </div>
                 </form>
