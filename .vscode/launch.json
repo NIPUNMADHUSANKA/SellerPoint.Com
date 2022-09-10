@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BackendApplication",
+            "request": "launch",
+            "mainClass": "SellerPoint.Backend.BackendApplication",
+            "projectName": "Backend"
+        },
+        {
+            "type": "java",
             "name": "Spring Boot-SellerPointApplication<SellerPoint>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
@@ -17,6 +24,16 @@
             "cwd": "${workspaceFolder}",
             "mainClass": "sellerpoint.com.Backend.BackendApplication",
             "projectName": "SellerPoint",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BackendApplication<Backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "sellerpoint.com.Backend.BackendApplication",
+            "projectName": "Backend",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
