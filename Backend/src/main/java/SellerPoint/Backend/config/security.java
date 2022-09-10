@@ -59,7 +59,11 @@ public class security extends WebSecurityConfigurerAdapter{
         http.cors().and().csrf().disable().authorizeRequests().antMatchers(
          "/SellerPoint/Register",
          "/SellerPoint/Login",
-         "/testing"
+         "/testing",
+         "/SellerPoint/AddFoodItem",
+         "/SellerPoint/GetFoodItem",
+         "/SellerPoint/DeleteFoodItem/**",
+         "/SellerPoint/UpdateFoodItem"
          )
 		.permitAll()
 		.antMatchers("/SellerPoint/Service/**").permitAll()
