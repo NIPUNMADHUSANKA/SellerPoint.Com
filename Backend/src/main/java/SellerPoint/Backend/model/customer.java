@@ -1,4 +1,4 @@
-package sellerpoint.com.Backend.model;
+package SellerPoint.Backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="Cumstomer")
-public class Customer {
+public class customer {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +23,9 @@ public class Customer {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
@@ -70,6 +73,13 @@ public class Customer {
     }
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+    public void setUsername(String username) {
+        this.username = username;
     }
     
 }
