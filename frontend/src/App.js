@@ -1,4 +1,10 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Login from './login.component'
+import SignUp from './signup.component'
+import './App.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 
 //Start of the Creating search//
 class App extends React.Component {
@@ -18,6 +24,43 @@ searchFoods(){
   render(){
    
   return (
+
+
+
+    <Router>
+    <div className="App">
+      <nav className="navbar navbar-expand-lg navbar-light fixed-top">
+        <div className="container">
+          <Link className="navbar-brand" to={'/sign-in'}>
+            positronX
+          </Link>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to={'/sign-in'}>
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={'/sign-up'}>
+                  Sign up
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div className="auth-wrapper">
+        <div className="auth-inner">
+          <Routes>
+            <Route exact path="/" element={<Login />} />
+            <Route path="/Log-in" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
+          </Routes>
+        </div>
+      </div>
+    </div>
+
     <div className="App">
    
 <div id="mobile-menu">
@@ -239,7 +282,9 @@ searchFoods(){
                 <div class="myaccount"><a title="My Account" href="#"><i class="fa fa-user"></i><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist" href="#"><i class="fa fa-heart"></i><span class="hidden-xs">Wishlist</span></a></div>
                 <div class="blog"><a title="Blog" href="#"><i class="fa fa-rss"></i><span class="hidden-xs">Blog</span></a></div>
-                <div class="login"><a href="#"><i class="fa fa-unlock-alt"></i><span class="hidden-xs">Log In</span></a></div>
+                <div class="login"><a href="/Log-in"><i class="fa fa-unlock-alt"></i><span class="hidden-xs">Log In</span></a></div>
+                <div class="signup"><a href="/sign-up"><i class="fa fa-unlock-alt"></i><span class="hidden-xs">Sign Up</span></a></div>
+                
               </div>
               <div class="language-currency-wrapper">
                 <div class="inner-cl">
@@ -2168,7 +2213,7 @@ searchFoods(){
     </div>
   </div>
    </div>
-     
+   </Router>  
   );
 }
 }
