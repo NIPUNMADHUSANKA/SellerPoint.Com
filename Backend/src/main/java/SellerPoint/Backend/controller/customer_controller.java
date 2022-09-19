@@ -78,8 +78,6 @@ public class customer_controller {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         
-
-        
     }
 
 
